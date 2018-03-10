@@ -1,7 +1,10 @@
 package com.example.android.miwok;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class ColorsActivity extends AppCompatActivity {
 
@@ -9,5 +12,32 @@ public class ColorsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colors);
+
+        ArrayList<Word> wordsOfColors = new ArrayList<Word>();
+
+        wordsOfColors.add(new Word("red", "rojo"));
+        wordsOfColors.add(new Word("green", "verde"));
+        wordsOfColors.add(new Word("brown", "cafe"));
+        wordsOfColors.add(new Word("grey", "gris"));
+        wordsOfColors.add(new Word("black", "negro"));
+        wordsOfColors.add(new Word("white", "blanco"));
+        wordsOfColors.add(new Word("yellow", "amarillo"));
+        wordsOfColors.add(new Word("blue", "azul"));
+        wordsOfColors.add(new Word("purple", "morado"));
+        wordsOfColors.add(new Word("orange", "naranja"));
+
+
+        WordAdapter adapter = new WordAdapter(this, wordsOfColors);
+
+        // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
+        // There should be a {@link ListView} with the view ID called list, which is declared in the
+        // activity_numbers.xml layout file.
+        ListView listView = (ListView) findViewById(R.id.list);
+
+        // Make the {@link ListView} use the {@link ArrayAdapter} we created above, so that the
+        // {@link ListView} will display list items for each word in the list of words.
+        // Do this by calling the setAdapter method on the {@link ListView} object and pass in
+        // 1 argument, which is the {@link ArrayAdapter} with the variable name itemsAdapter.
+        listView.setAdapter(adapter);
     }
 }
