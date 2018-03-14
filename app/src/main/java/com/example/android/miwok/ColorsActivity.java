@@ -21,10 +21,10 @@ public class ColorsActivity extends AppCompatActivity {
         wordsOfColors.add(new Word("grey", "gris", R.drawable.color_gray));
         wordsOfColors.add(new Word("black", "negro", R.drawable.color_black));
         wordsOfColors.add(new Word("white", "blanco", R.drawable.color_white));
-        wordsOfColors.add(new Word("yellow", "amarillo", R.drawable.color_dusty_yellow));
-        wordsOfColors.add(new Word("blue", "azul"));
-        wordsOfColors.add(new Word("purple", "morado"));
-        wordsOfColors.add(new Word("orange", "naranja"));
+        wordsOfColors.add(new Word("yellow", "amarillo", R.drawable.color_mustard_yellow));
+        wordsOfColors.add(new Word("blue", "azul", R.drawable.color_blue));
+        wordsOfColors.add(new Word("purple", "morado", R.drawable.color_purple));
+        wordsOfColors.add(new Word("orange", "naranja", R.drawable.color_orange));
 
 
         WordAdapter adapter = new WordAdapter(this, wordsOfColors);
