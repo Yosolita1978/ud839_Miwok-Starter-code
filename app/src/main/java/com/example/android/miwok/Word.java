@@ -10,9 +10,17 @@ public class Word {
 
     private String mSpanishTranslation;
 
+    private int mImageResourceId;
+
     public Word(String DefaultTranslation, String SpanishTranslation){
         mDefaultTranslation = DefaultTranslation;
         mSpanishTranslation = SpanishTranslation;
+    }
+
+    public Word(String defaultTranslation, String spanishTranslation, int imageResourceId) {
+        mDefaultTranslation = defaultTranslation;
+        mSpanishTranslation = spanishTranslation;
+        mImageResourceId = imageResourceId;
     }
 
     public String getDefaultTranslation(){
@@ -21,5 +29,9 @@ public class Word {
 
     public String getSpanishTranslation(){
         return mSpanishTranslation;
+    }
+
+    public int getImageResourceId() {
+        return mImageResourceId;
     }
 }

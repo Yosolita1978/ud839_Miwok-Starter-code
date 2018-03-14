@@ -1,24 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:padding="16dp">
 
-    <TextView
-        android:id="@+id/text_view_spanish"
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:gravity="center_vertical"
-        tools:text="spanish"
-        android:minHeight="?android:attr/listPreferredItemHeightSmall" />
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/image"/>
 
-    <TextView
-        android:id="@+id/text_view_default"
+    <LinearLayout
+        android:id="@+id/text_container"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        tools:text="english" />
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp">
+
+        <TextView
+            android:id="@+id/text_view_spanish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            tools:text="spanish" />
+
+        <TextView
+            android:id="@+id/text_view_default"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            tools:text="english" />
+    </LinearLayout>
 
 </LinearLayout>

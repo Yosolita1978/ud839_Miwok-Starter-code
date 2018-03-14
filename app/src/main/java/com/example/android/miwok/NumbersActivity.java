@@ -15,16 +15,16 @@ public class NumbersActivity extends AppCompatActivity {
 
         ArrayList<Word> wordsOfNumbers = new ArrayList<Word>();
 
-        wordsOfNumbers.add(new Word("one", "uno"));
-        wordsOfNumbers.add(new Word("two", "dos"));
-        wordsOfNumbers.add(new Word("three", "tres"));
-        wordsOfNumbers.add(new Word("four", "cuatro"));
-        wordsOfNumbers.add(new Word("five", "cinco"));
-        wordsOfNumbers.add(new Word("six", "seis"));
-        wordsOfNumbers.add(new Word("seven", "siete"));
-        wordsOfNumbers.add(new Word("eight", "ocho"));
-        wordsOfNumbers.add(new Word("nine", "nueve"));
-        wordsOfNumbers.add(new Word("ten", "diez"));
+        wordsOfNumbers.add(new Word("one", "uno", R.drawable.number_one));
+        wordsOfNumbers.add(new Word("two", "dos", R.drawable.number_two));
+        wordsOfNumbers.add(new Word("three", "tres", R.drawable.number_three));
+        wordsOfNumbers.add(new Word("four", "cuatro", R.drawable.number_four));
+        wordsOfNumbers.add(new Word("five", "cinco", R.drawable.number_five));
+        wordsOfNumbers.add(new Word("six", "seis", R.drawable.number_six));
+        wordsOfNumbers.add(new Word("seven", "siete", R.drawable.number_seven));
+        wordsOfNumbers.add(new Word("eight", "ocho", R.drawable.number_eight));
+        wordsOfNumbers.add(new Word("nine", "nueve", R.drawable.number_nine));
+        wordsOfNumbers.add(new Word("ten", "diez", R.drawable.number_ten));
 
 
         WordAdapter adapter = new WordAdapter(this, wordsOfNumbers);
