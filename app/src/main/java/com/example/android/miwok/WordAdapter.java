@@ -1,6 +1,7 @@
 package com.example.android.miwok;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,10 +15,14 @@ import java.util.ArrayList;
  * Created by cristina on 3/8/18.
  */
 
-public class WordAdapter extends ArrayAdapter {
+public class WordAdapter extends ArrayAdapter<Word> {
 
-    public WordAdapter(Context context, ArrayList<Word> word) {
+    private int mColorResourceId;
+
+
+    public WordAdapter(Context context, ArrayList<Word> word, int colorResourceId) {
         super(context, 0, word);
+        mColorResourceId = colorResourceId;
     }
 
     @Override
@@ -39,7 +44,30 @@ public class WordAdapter extends ArrayAdapter {
         // Find the ImageView in the list_item.xml layout with the ID image.
         ImageView imageView = (ImageView) listItemView.findViewById(R.id.image);
         // Set the ImageView to the image resource specified in the current Word
-        imageView.setImageResource(currentWord.getImageResourceId());
+
+        if (currentWord.hasImage()){
+
+            imageView.setImageResource(currentWord.getImageResourceId());
+
+            imageView.setVisibility(View.VISIBLE);
+
+        } else {
+
+            imageView.setVisibility(View.GONE);
+        }
+
+        // Set the theme color for the list item
+        View textContainer = listItemView.findViewById(R.id.text_container);
+
+        // Find the color that the resource ID maps to
+
+        int color = ContextCompat.getColor(getContext(), mColorResourceId);
+
+        // Set the background color of the text container View
+        textContainer.setBackgroundColor(color);
+
+
+
 
         return listItemView;
     }
